@@ -55,8 +55,9 @@ public class CounterTrig : MonoBehaviour
         if (detected == true && Input.GetKeyDown(KeyCode.E) && item != null)
         {
             FindObjectOfType<PlayerPickUp>().isPickup = true;
-            item = null;
-            
+            if (CompareTag("RegularCounter") == false) {            item = null;
+             }
+
         }
 
         if (isChanged == true && item == null)
