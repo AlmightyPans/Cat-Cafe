@@ -9,6 +9,8 @@ public class CakeSpawn : MonoBehaviour
     [SerializeField] GameObject spawnerPosition;
     [SerializeField] GameObject cake;
 
+    [SerializeField] GameObject counterTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class CakeSpawn : MonoBehaviour
         {
             spawned = true;
             GameObject cakeYay = Instantiate(cake, spawnerPosition.transform.position, transform.rotation);
+            counterTrigger.GetComponent<CounterTrig>().AddToItemVariable(cakeYay);
             FindObjectOfType<CounterTrig>().isChanged = false;
         }
     }
