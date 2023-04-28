@@ -41,11 +41,7 @@ public class PlayerPickUp : MonoBehaviour
         }
     }
 
-    public void NoPickUp()
-    {
-        isPickup = false;
-        Debug.Log("das");
-    }
+
 
     public int GetCost()
     {

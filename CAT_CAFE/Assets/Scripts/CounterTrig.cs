@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CounterTrig : MonoBehaviour
 {
-    bool detected = false;
+    [SerializeField]bool detected = false;
     public bool isChanged = false;
     //Store counter position in a variable
     [SerializeField] GameObject counterPosition;
@@ -37,9 +37,10 @@ public class CounterTrig : MonoBehaviour
             FindObjectOfType<PlayerPickUp>().isPickup = false;
 
             if (item != null) 
-            {             
-                FindObjectOfType<PlayerPickUp>().NoPickUp();
+            {
+                Debug.Log(counterPosition.transform.position);
                 item.transform.position = counterPosition.transform.position;
+
                 FindObjectOfType<PlayerPickUp>().isPickup = false;
                 
                
